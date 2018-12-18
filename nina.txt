@@ -1,1 +1,6 @@
 ninanina
+
+Entry and exit points allow transitions at different levels in a state machine hierarchy to be connected. A transition can terminate at an entry point on the edge of a composite state. Another transition can then connect the entry point with a sub state inside the composite state. Thereby it becomes possible to enter a composite state and proceed directly to a certain sub state. 
+There are three ways in which a transition can enter a composite state: 1) Via an entry point 2) Via a history point 3) Directly to the edge of the state.
+Enter via an entry point In the above example the transition ping enters State2 via an entry point. If ping is triggered then the sub state State4 will be entered. 
+Note that the transitions in the sub state diagram that originate at entry points do not have any triggers themselves. These transitions cannot be triggered directly on their own, but only indirectly when the transitions that connect at the entry points in the enclosing state machine get triggered. They hence behave similar to a transition that leave a junction point, and may have effect code and guard, but no triggers.
